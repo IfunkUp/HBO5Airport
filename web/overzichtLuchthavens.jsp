@@ -97,8 +97,8 @@
                                          session.setAttribute("ChosenHaven", L);%>
                                          
                                         <div>
-                                            <label for="txtId">id</label>
-                                            <input name="txtId" type="text" readonly="true" value="<%=L.getId()%>"/>
+                                            <label for="txtid">id</label>
+                                            <input name="txtid" type="text" readonly="true" value="<%=L.getId()%>"/>
                                             <label for="txtNaam">Naam</label>
                                             <input name="txtNaam" type="text" value="<%=L.getNaam()%>"/>
                                             <label for="txtStad">Stad</label>

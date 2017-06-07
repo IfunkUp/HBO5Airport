@@ -86,6 +86,7 @@
                                         <div>
                                             <label for="txtId">id</label>
                                             <input name="txtId" type="text" readonly="true" value="<%=L.getId()%>"/>
+                                            <%session.setAttribute("txtid", L.getId());%>
                                             <label for="txtNaam">Naam</label>
                                             <input name="txtNaam" type="text" value="<%=L.getNaam()%>"/>
                                          <%}%> 

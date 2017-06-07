@@ -252,7 +252,7 @@ public class AdminServlet extends HttpServlet {
              url="newitem.jsp";
          }
              else if ("update".equals(request.getParameter("choice"))) {
-                 if (request.getParameter("txtid") != null) {
+                 if (session.getAttribute("txtid") != null) {
                 
             
                  session.setAttribute("maatschappijen", dalease.get_Leasemaatschappij());
