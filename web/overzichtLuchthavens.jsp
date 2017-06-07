@@ -74,7 +74,7 @@
  
   
                                 </div>
-                                <form  action="AdminServlet?choice=Haven" method="POST">
+                                <form  action="AdminServlet?choice=Luchthaven" method="POST">
                                 <div class="form-group"> 
                                     <label for="LstHaven">kies een luchthaven</label>
                                     <select onchange="this.form.submit()" class="form-control" name="LstHaven" style="width: 50%; margin: 15px">
@@ -108,9 +108,9 @@
                                             <input type="submit" name="btnVerwijder" value="Verwijder"/>
                                         </div>
                                              <%}%>  
-                                            <td><a href=AdminServlet?choice=add&kind=haven>Nieuwe Luchthaven</a></td>
-                                            <td><a href=AdminServlet?choice=update&kind=haven>Gegevens wijzigen</td>
-                                            <td><a href=AdminServlet?choice=delete&kind=haven>wissen</td>
+                                            <td><a href=AdminServlet?choice=add&kind=Luchthaven>Nieuwe Luchthaven</a></td>
+                                            <td><a href=AdminServlet?choice=update&kind=Luchthaven>Gegevens wijzigen</td>
+                                            <td><a href=AdminServlet?choice=delete&kind=Luchthaven>wissen</td>
                                             
                                     </form>
                                  

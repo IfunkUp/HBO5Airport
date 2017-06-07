@@ -90,8 +90,8 @@
                                  
    
 
-                                    <% if ("haven".equals(request.getParameter("kind"))){ 
-                                        session.setAttribute("newItem", "Haven");
+                                    <% if ("Luchthaven".equals(request.getParameter("kind"))){ 
+                                        session.setAttribute("newItem", "Luchthaven");
                                     %>
                                             
                                             <th>stad</th>
