@@ -4,9 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/steve/Documents/project/web/newitem.jsp</file>
+            <file>file:/C:/Users/steve/Documents/project/web/overzichtPersonen.jsp</file>
             <file>file:/C:/Users/steve/Documents/project/src/java/hbo5/it/www/RegisterServlet.java</file>
             <file>file:/C:/Users/steve/Documents/project/src/java/hbo5/it/www/AdminServlet.java</file>
+            <file>file:/C:/Users/steve/Documents/project/web/wijzigitem.jsp</file>
             <file>file:/C:/Users/steve/Documents/project/web/overzichtBemanning.jsp</file>
+            <file>file:/C:/Users/steve/Documents/project/src/java/hbo5/it/www/dataaccess/DAVliegtuig.java</file>
             <file>file:/C:/Users/steve/Documents/project/src/java/hbo5/it/www/dataaccess/DALeasemaatschappij.java</file>
         </group>
     </open-files>

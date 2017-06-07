@@ -102,8 +102,8 @@
                                             </tr>
                                        <%}%>     
                                             
-                                       <%if ("maatschappij".equals(request.getParameter("kind"))) {
-                                           session.setAttribute("newItem", "maatschappij");%>
+                                       <%if ("luchtvaartmaatschappij".equals(request.getParameter("kind"))) {
+                                           session.setAttribute("newItem", "luchtvaartmaatschappij");%>
 <tr>
                                             <td><input type="text" name="txtid" readonly="true" value="<%=request.getAttribute("topId")%>"/> </td>
                                             <td><input  type="text" name="txtnaam" id="Naam" /></td> 
@@ -126,7 +126,7 @@
                                             </td> 
                                             <td>
                                                 <select name="LstLease">
-                                                    <option value="null"></option>
+                                                    <option value="null"> niet in lease</option>
                                                     <% ArrayList<Leasemaatschappij> lijst = (ArrayList<Leasemaatschappij>) session.getAttribute("maatschappijen");
                                                     for (Leasemaatschappij item : lijst) {%>
                                                     <option value="<%=item.getId()%>"> <%=item.getNaam()%> </option>
