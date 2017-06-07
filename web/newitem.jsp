@@ -126,6 +126,7 @@
                                             </td> 
                                             <td>
                                                 <select name="LstLease">
+                                                    <option value="null"></option>
                                                     <% ArrayList<Leasemaatschappij> lijst = (ArrayList<Leasemaatschappij>) session.getAttribute("maatschappijen");
                                                     for (Leasemaatschappij item : lijst) {%>
                                                     <option value="<%=item.getId()%>"> <%=item.getNaam()%> </option>

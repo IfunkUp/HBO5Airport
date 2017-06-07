@@ -305,10 +305,12 @@ public class AdminServlet extends HttpServlet {
                 url="overzichtMaatschappijen.jsp";
             }
                    else if ("vliegtuig".equals(session.getAttribute("newItem"))) {
-                       Integer type=Integer.parseInt( request.getParameter("LstType"));
-                       Integer lease = Integer.parseInt(request.getParameter("LstLease"));
-                       Integer lucht = Integer.parseInt(request.getParameter("LstMaatschappij"));
-                davliegtuig.AddVliegtuig(Integer.parseInt( request.getParameter("txtid")), type, lease, lucht);
+                       nMap.clear();
+                       nMap.put("1", request.getParameter("txtid"));
+                       nMap.put("2", request.getParameter("LstType"));
+                       nMap.put("3", request.getParameter("LstLease"));
+                       nMap.put("4",request.getParameter("LstMaatschappij") );
+                      
            
                 url= "AdminServlet?page=vliegtuig";
             }
@@ -324,10 +326,6 @@ public class AdminServlet extends HttpServlet {
                      } catch (ParseException ex) {
                          Logger.getLogger(AdminServlet.class.getName()).log(Level.SEVERE, null, ex);
                      }
-                       
-                       
-                       
-                       
                        nMap.clear();
                        nMap.put("1", id);
                        nMap.put("2", request.getParameter("txtCode"));
@@ -337,11 +335,11 @@ public class AdminServlet extends HttpServlet {
                        nMap.put("6", request.getParameter("LstVertrek"));
                        nMap.put("7", request.getParameter("LstAankomst"));
                        
-                       davliegtuig.Add_Row( nMap, (String) session.getAttribute("newItem"));
+                     
                  url="AdminServlet?page=vlucht";
              }
                    
-                   
+                     davliegtuig.Add_Row( nMap, (String) session.getAttribute("newItem"));
                    
                    
        //     url = "StartAdmin.jsp";
