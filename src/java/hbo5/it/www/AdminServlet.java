@@ -153,6 +153,7 @@ public class AdminServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         
         session = request.getSession();
+
         try (PrintWriter out = response.getWriter()) {
         }
          rd = request.getRequestDispatcher(url);
