@@ -286,7 +286,7 @@ public class AdminServlet extends HttpServlet {
             }
                   if ("Luchthaven".equals(request.getParameter("kind"))) {
                       session.setAttribute("L", null);
-                 url="deleteitem.jsp";
+                  url="deleteitem.jsp";
             } 
         }
              else if (request.getParameter("nieuw") != null) {
@@ -296,8 +296,12 @@ public class AdminServlet extends HttpServlet {
             dalease.Add_maatschappij( id, request.getParameter("txtnaam"),"leasemaatschappij");
                    }
                    else   if ("Luchthaven".equals(session.getAttribute("newItem"))) {
-                       daLuchthaven.Add_luchthaven(Integer.parseInt(request.getParameter("txtid")), request.getParameter("txtnaam"), request.getParameter("txtstad"));
-                        session.setAttribute("lijsthavens",  daLuchthaven.getLuchthavens());
+                       nMap.put("1", request.getParameter("txtid"));
+                       nMap.put("2", request.getParameter("txtnaam"));
+                       nMap.put("3", request.getParameter("txtstad"));
+                       
+                       
+                        
                        url="AdminServlet?page=luchthavens" ;
                    }
                    else if ("luchtvaartmaatschappij".equals(session.getAttribute("newItem"))) {
@@ -399,9 +403,9 @@ public class AdminServlet extends HttpServlet {
                   }
                   else   if ("Luchthaven".equals(session.getAttribute("delItem"))) {
                       obj = "luchthaven";
+                       url="AdminServlet?page=luchthavens";
                   }
                   dalease.DeleteItem(obj,Integer.parseInt( request.getParameter("txtid")) );
-                  url = "StartAdmin.jsp";
              }
              
             else{

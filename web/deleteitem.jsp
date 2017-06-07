@@ -84,7 +84,7 @@
                                             <%}%>
                                             <%  if (session.getAttribute("ChosenHaven") != null) {
                                                 Luchthaven LH = (Luchthaven) session.getAttribute("ChosenHaven");
-                                            session.setAttribute("delItem", "Haven"); %>
+                                            session.setAttribute("delItem", "Luchthaven"); %>
                                             <h3> bent u zeker dat u <%=LH.getNaam()%> wilt wissen?
                                              <table>
                                                 <th>id</th>

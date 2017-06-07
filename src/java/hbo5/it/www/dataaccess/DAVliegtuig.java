@@ -208,7 +208,7 @@ return E;
         for (Map.Entry<String, Object> entry : Parameters.entrySet()) {
             teller++;
             String s;
-            if (entry.getValue().equals("null")) {
+            if (entry.getValue().equals("null") || entry.getValue().equals("")) {
                  s = " null ";
             }
             else{
