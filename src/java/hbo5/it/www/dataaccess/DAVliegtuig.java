@@ -207,6 +207,7 @@ return E;
          Integer teller = 0;
         for (Map.Entry<String, Object> entry : Parameters.entrySet()) {
             teller++;
+
             String s;
             if (entry.getValue().equals("null") || entry.getValue().equals("")) {
                  s = " null ";
@@ -215,6 +216,7 @@ return E;
                  s =" '"+ entry.getValue()+"' ";
             }
          
+
             b.append(s);
             if (Parameters.size() > teller) {
                 b.append(", ");

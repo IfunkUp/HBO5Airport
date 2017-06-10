@@ -6,12 +6,16 @@
 package hbo5.it.www;
 
 
+
+import hbo5.it.www.beans.Bemanningslid;
+
 import hbo5.it.www.beans.Crew;
 import hbo5.it.www.beans.Hangar;
 import hbo5.it.www.beans.Luchthaven;
 import hbo5.it.www.beans.Passagier;
 import hbo5.it.www.beans.Persoon;
 import hbo5.it.www.beans.Vlucht;
+import hbo5.it.www.dataaccess.DABemanningslid;
 import hbo5.it.www.dataaccess.DAHangar;
 import hbo5.it.www.dataaccess.DALeasemaatschappij;
 import hbo5.it.www.dataaccess.DALuchthaven;
@@ -30,6 +34,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
@@ -65,6 +70,9 @@ public class AdminServlet extends HttpServlet {
         private DAVlucht davlucht = null;
         private DAPassagier dapassagier = null;
         private DAVliegtuigtype datype = null;
+
+        private DABemanningslid dabemanning = null;
+
         
         
         
@@ -103,6 +111,11 @@ public class AdminServlet extends HttpServlet {
             if (datype == null) {
                 datype = new DAVliegtuigtype(url, login, password, driver);
             }
+
+            if (dabemanning == null) {
+                dabemanning = new DABemanningslid(url, login, password, driver);
+            }
+
         }catch (ClassNotFoundException | SQLException e) {
             throw new ServletException(e);
         }
@@ -138,6 +151,11 @@ public class AdminServlet extends HttpServlet {
             if (datype != null) {
                 datype.close();
             }
+
+            if(dabemanning != null){
+                dabemanning.close();
+            }
+
         } catch (SQLException e) {
         }}
     
@@ -180,8 +198,9 @@ public class AdminServlet extends HttpServlet {
               session.setAttribute("lijsthavens",  daLuchthaven.getLuchthavens());
               session.setAttribute("lijstmaatschappijen",damaatschappij.get_luchtvaartmaatschapijen());
               session.setAttribute("lijstpersonen", dapersoon.get_names());
-              
+
               session.setAttribute("lijstLease",dalease.get_leaseNamen());
+
             
    
         if (request.getParameter("btnWijzig")!= null) {
@@ -207,7 +226,9 @@ public class AdminServlet extends HttpServlet {
              else if ("Leasemaatschappij".equals(request.getParameter("page"))){
                 url="overzichtLease.jsp";
             }
+
              else if ("luchtvaartmaatschappij".equals(request.getParameter("page"))){
+
                 url="overzichtMaatschappijen.jsp";
             }
               else if ("vliegtuig".equals(request.getParameter("page"))){
@@ -224,6 +245,9 @@ public class AdminServlet extends HttpServlet {
                 url = "overzichtHangars.jsp";
             }
             else if ("vlucht".equals(request.getParameter("page"))){
+
+                session.setAttribute("lijstBemanning", dabemanning.getAll());
+
                 request.setAttribute("topId", dalease.getTopId("vlucht"));   
                 url = "newitem.jsp?kind=vlucht";
             }
@@ -233,6 +257,7 @@ public class AdminServlet extends HttpServlet {
                  request.setAttribute("topId", dalease.getTopId("Leasemaatschappij"));   
                  request.setAttribute("kind", "lease");
             }
+
              else if ("Luchthaven".equals(request.getParameter("kind"))) {
                 request.setAttribute("topId", dalease.getTopId("Luchthaven"));
                 request.setAttribute("kind", "Luchthaven");
@@ -240,6 +265,7 @@ public class AdminServlet extends HttpServlet {
              else if ("luchtvaartmaatschappij".equals(request.getParameter("kind"))) {
                 request.setAttribute("topId", dalease.getTopId("Luchtvaartmaatschappij"));
                 request.setAttribute("kind", "luchtvaartmaatschappij");
+
             }
              else if ("vliegtuig".equals(request.getParameter("kind"))) {
               
@@ -253,7 +279,9 @@ public class AdminServlet extends HttpServlet {
              url="newitem.jsp";
          }
              else if ("update".equals(request.getParameter("choice"))) {
+
                  if (session.getAttribute("txtid") != null) {
+
                 
             
                  session.setAttribute("maatschappijen", dalease.get_Leasemaatschappij());
@@ -263,7 +291,9 @@ public class AdminServlet extends HttpServlet {
                        session.setAttribute("ChosenPlane", null);
                 
             }
+
                   if ("Luchthaven".equals(request.getParameter("kind"))) {
+
                        session.setAttribute("L", null);
                        session.setAttribute("ChosenPlane", null);
                 
@@ -285,9 +315,11 @@ public class AdminServlet extends HttpServlet {
                       session.setAttribute("ChosenHaven", null);
                 url="deleteitem.jsp";
             }
+
                   if ("Luchthaven".equals(request.getParameter("kind"))) {
                       session.setAttribute("L", null);
                   url="deleteitem.jsp";
+
             } 
         }
              else if (request.getParameter("nieuw") != null) {
@@ -296,6 +328,7 @@ public class AdminServlet extends HttpServlet {
                    if ("Lease".equals(session.getAttribute("newItem"))) {
             dalease.Add_maatschappij( id, request.getParameter("txtnaam"),"leasemaatschappij");
                    }
+
                    else   if ("Luchthaven".equals(session.getAttribute("newItem"))) {
                        nMap.put("1", request.getParameter("txtid"));
                        nMap.put("2", request.getParameter("txtnaam"));
@@ -320,6 +353,7 @@ public class AdminServlet extends HttpServlet {
                        nMap.put("3", request.getParameter("LstLease"));
                        nMap.put("4",request.getParameter("LstMaatschappij") );
                       
+
            
                 url= "AdminServlet?page=vliegtuig";
             }
@@ -344,11 +378,40 @@ public class AdminServlet extends HttpServlet {
                        nMap.put("6", request.getParameter("LstVertrek"));
                        nMap.put("7", request.getParameter("LstAankomst"));
                        
-                     
+ 
+                       
+                    Integer teller = 1;
+                    List<Integer> lijst = new LinkedList<>();
+                       while (teller <= dabemanning.getAll().keySet().size()) {                           
+                          
+                           if (request.getParameter(teller.toString()) != null) {
+                              lijst.add(teller);
+                           }
+                         
+                            teller ++;
+                       }
+                       davliegtuig.Add_Row( nMap, (String) session.getAttribute("newItem"));
+                       for (Integer integer : lijst) {
+                           Bemanningslid b = dabemanning.getById(integer.intValue());
+                           nMap.clear();
+                           nMap.put("1",dalease.getTopId("vluchtbemanning"));
+                           nMap.put("2",dabemanning.getFunctiebyid(b.getFunctie_id()));
+                           nMap.put("3", b.getId());
+                           nMap.put("4", id );
+                          davliegtuig.Add_Row(nMap, "vluchtbemanning");
+                       }
+                
+                       
+                       
+                       
+                       
                  url="AdminServlet?page=vlucht";
              }
                    
+  
+
                      davliegtuig.Add_Row( nMap, (String) session.getAttribute("newItem"));
+
                    
                    
        //     url = "StartAdmin.jsp";
@@ -362,7 +425,9 @@ public class AdminServlet extends HttpServlet {
                        nMap.put("naam",request.getParameter("txtnaam") );
                        item = "Leasemaatschappij";
             }
+
                     else   if ("Luchthaven".equals(session.getAttribute("newItem"))) {
+
                        
                         nMap.put("naam",  request.getParameter("txtnaam"));
                         nMap.put("stad", request.getParameter("txtstad"));
@@ -402,11 +467,14 @@ public class AdminServlet extends HttpServlet {
                   if ("Lease".equals(session.getAttribute("delItem"))) {
                       obj = "Leasemaatschappij";
                   }
+ url = "StartAdmin.jsp";
+
                   else   if ("Luchthaven".equals(session.getAttribute("delItem"))) {
                       obj = "luchthaven";
                        url="AdminServlet?page=luchthavens";
                   }
                   dalease.DeleteItem(obj,Integer.parseInt( request.getParameter("txtid")) );
+
              }
              
             else{
@@ -465,12 +533,16 @@ public class AdminServlet extends HttpServlet {
             request.setAttribute("InhoudHangar", davliegtuig.Get_by_Hangar((String) request.getAttribute("VarHangar")));
             url="overzichtHangars.jsp";
         }
+
         else if ("Luchthaven".equals(request.getParameter("choice"))){
+
         session.setAttribute("VarLuchthaven", request.getParameter("LstHaven"));
         request.setAttribute("Luchthaven", daLuchthaven.getLuchthaven((String)session.getAttribute("VarLuchthaven")));
         url = "overzichtLuchthavens.jsp";
         }
+
         else if ("luchtvaartmaatschappij".equals(request.getParameter("choice"))){
+
         session.setAttribute("Varmaatschappij",request.getParameter("LstMaatschappij"));
         request.setAttribute("Maatschappij",damaatschappij.getMaatschappij((String) session.getAttribute("Varmaatschappij")) );
         url="overzichtMaatschappijen.jsp";
