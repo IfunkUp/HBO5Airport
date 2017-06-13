@@ -4,8 +4,10 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Runtime.CompilerServices;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using ProjectDekerfsteve;
 
@@ -19,7 +21,8 @@ namespace ProjectDekerfsteve.Controllers
         public ActionResult Index()
         {
             //var proj_evenementen = db.Proj_evenementen.Include(e => e.gemeente);
-            var evenementen = db.Proj_evenementen.Where(x => x.datum >= DateTime.Now).GroupBy(x => x.datum.Month).ToList();
+           // var evenementen = db.Proj_evenementen.Where(x => x.datum >= DateTime.Now).GroupBy(x => x.datum.Month).ToList();
+            var evenementen = db.Proj_evenementen.Where(x => x.datum >= DateTime.Now).OrderBy(x => x.datum).ToList();
             return View(evenementen);
         }
 
