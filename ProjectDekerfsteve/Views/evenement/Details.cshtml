@@ -4,26 +4,21 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+
 
 <div>
-    <h4>evenement</h4>
+    <h2>@Html.ViewData.Model.naam</h2>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.naam)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.naam)
-        </dd>
-
+<div class="text-center">
+    <dl class="">
+       
+       
         <dt>
             @Html.DisplayNameFor(model => model.beschrijving)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.beschrijving)
+            @Html.DisplayTextFor(model => model.beschrijving)
         </dd>
 
         <dt>
@@ -41,9 +36,18 @@
         <dd>
             @Html.DisplayFor(model => model.gemeente.naam)
         </dd>
-        <dt>
-            @Html.DisplayName("Reeds ingeschreven")
-        </dt>
+        @if (ViewBag.aantalIngeschreven < Model.Max_inschrijvingen)
+        {
+            <dt class="text-info" style="color: green">
+                @Html.DisplayName("Reeds ingeschreven")
+            </dt>
+        }
+        else
+        {
+            <dt class="text-info" style="color: red">
+                @Html.DisplayName("Reeds ingeschreven")
+            </dt>
+        }
         <dd>
             <label>@ViewBag.aantalIngeschreven / </label>
             @Html.DisplayFor(model => model.Max_inschrijvingen)
@@ -51,16 +55,19 @@
         </dd>
 
     </dl>
+
 </div>
-<p>
+</div>
+
+    <div class="text-center">
     @if (User.IsInRole("Admin") || User.IsInRole("Organisator"))
     {
-        @Html.ActionLink("Edit", "Edit", new {id = Model.id})  <p>|</p>
+        <button class="btn-lg">@Html.ActionLink("Edit", "Edit", new { id = Model.id })</button>
     }
     @if (User.IsInRole("Lid") && (ViewBag.aantalIngeschreven < Model.Max_inschrijvingen))
     {
-        
-        @Html.ActionLink("Inschrijven", "Subscribe", Model )
+
+        <button class="btn-lg"> @Html.ActionLink("Inschrijven", "Subscribe", Model)</button>
     }
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    <button class="btn-lg">@Html.ActionLink("Back to List", "Index")</button>
+    </div>

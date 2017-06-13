@@ -5,88 +5,57 @@
 @using System.Web.UI.WebControls
 @using Microsoft.Ajax.Utilities
 @model List<evenement>
-
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Overzicht";
 }
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    @{ var wissel = "";}
-    @foreach (var item in Model)
-    {
-        var maand = @System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(item.datum.Month);
-        <tr>
-            
-            
-            @if (wissel != maand)
-            {
-                wissel = maand;
-                <td>@maand @item.datum.Year</td>
-           
-            }
-            else
-            {
-                <td></td>
-            }
-       
-            <td>
-                @Html.ActionLink(item.beschrijving,"Details",new {id = item.id})
-            </td>
-            <td>
-                <p>Waar: @item.gemeente.naam</p>
-                <p>Wanneer: @item.datum</p>
-                <p>totaal plaatsen: @item.Max_inschrijvingen</p>
-            </td>
+<div class="col-lg-12">
+    <table class="table">
+        @{ var wissel = "";}
+        @foreach (var item in Model)
+        {
+            var maand = @System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(item.datum.Month);
+            <tr>
 
 
-
-
-        </tr>
-    }
-
-
-
-
-
-
-
-
-
-        
-    @*@foreach (var item in Model)
-    {
-        <tr>
-            <th>
-                @Html.DisplayName(DateTimeFormatInfo.CurrentInfo.GetMonthName(item.Key))
-            </th>
-
-            @foreach (var evenement in item)
-            {
-                if (evenement.Huidige_inschrijvingen < evenement.Max_inschrijvingen)
+                @if (wissel != maand)
                 {
-                    <td>
-                        @Html.ActionLink(evenement.naam, "Details", "evenement", new {evenement.id}, null)
-                    </td>
+                    wissel = maand;
+                    <td>@maand @item.datum.Year</td>
+
                 }
                 else
                 {
-                    <td>
-                        @Html.Label(evenement.naam)
-                    </td>
-
+                    <td></td>
                 }
 
+                <td>
+                    @Html.ActionLink(item.naam, "Details", new { id = item.id })
+                </td>
+                <td>
+                    <p>@item.beschrijving</p>
+                </td>
+                <td>
+                    <p>Waar: @item.gemeente.naam</p>
+                    <p>Wanneer: @item.datum</p>
+                    <p>totaal plaatsen: @item.Max_inschrijvingen</p>
+                </td>
 
-            }
-        </tr>
-    }*@
+
+            </tr>
+        }
+ 
 
 
-</table>
 
+
+    </table>
+    @if (User.IsInRole("Admin") || User.IsInRole("Organisator"))
+    {
+        <div class="text-center">
+            <button class="btn-lg">
+                @Html.ActionLink("Create New", "Create")
+            </button>
+        </div>
+    }
+</div>
 
