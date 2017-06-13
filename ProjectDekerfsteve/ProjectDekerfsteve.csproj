@@ -380,6 +380,8 @@
     <Content Include="Views\evenement\Index.cshtml" />
     <Content Include="Views\Account\Extra.cshtml" />
     <Content Include="Views\evenement\Subscribe.cshtml" />
+    <Content Include="Views\evenement\Zoek.cshtml" />
+    <Content Include="Views\Shared\_Subscribe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

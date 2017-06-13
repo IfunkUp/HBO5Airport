@@ -9,8 +9,20 @@
     ViewBag.Title = "Overzicht";
 }
 <div>
+    
     <h3>@Teksten.events</h3>
+@using (Html.BeginForm("zoek", "evenement", FormMethod.Post))
+{
+    
+    
 
+     
+             <input type="text" name="txtGemeente" class="form-control" />
+             <input type="submit" value="Zoeken" class="btn btn-default"/>
+        
+
+
+}
 </div>
 <div class="col-lg-12">
     <table class="table" id="events">

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ProjectDekerfsteve.evenement>
+
+@{
+    ViewBag.Title = "Zoek";
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.naam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.beschrijving)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Max_inschrijvingen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Huidige_inschrijvingen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gemeente.naam)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.naam)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.beschrijving)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Max_inschrijvingen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Huidige_inschrijvingen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gemeente.naam)
+        </td>
+    </tr>
+}
+
+</table>

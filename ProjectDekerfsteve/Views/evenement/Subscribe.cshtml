@@ -35,7 +35,27 @@
                 </p>
             </div>
         </div>
-       <div id="UpdatePanel" ></div>
+        
+        @{
+            //krijg de waarde niet uit de slider maar de functionaliteit werkt wel
+            int a = 0;
+            evenement evene2 = ViewBag.evenement;
+        }
+
+        @Ajax.ActionLink("reserveer", "AjaxResult","evenement",new
+        {
+            AJaantal = a,
+            evene = evene2.id
+        },new AjaxOptions
+        {
+            UpdateTargetId = "UpdatePanel",
+            InsertionMode = InsertionMode.Replace,
+            AllowCache = false,
+            
+        })
+
+
+        <div id="UpdatePanel" ></div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -51,28 +71,4 @@
 @section Scripts {
     @Scripts.Render("~/bundles/steves")
 
-    <script>
-        $(document).ready(
-        function getRest() {
-            $.ajax({
-                type: "POST",
-                url: "~/evenement/Test",
-                data: {"boodschap":"Test"},
-                datatype: "Json",
-                cache:false,
-                success: function(data) {
-                    $('#UpdatePanel').text();
-                }
-
-            });
-
-        }
-        function OnSucces(data) {
-            alert(data);
-
-        }
-        function OnError(data) {
-            alert('Fout bij opvragen data');
-    
-    </script>
 }

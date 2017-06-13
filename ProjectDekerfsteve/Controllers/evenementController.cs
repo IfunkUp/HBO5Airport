@@ -21,7 +21,8 @@ namespace ProjectDekerfsteve.Controllers
         public ActionResult Index()
         {
             //var proj_evenementen = db.Proj_evenementen.Include(e => e.gemeente);
-           // var evenementen = db.Proj_evenementen.Where(x => x.datum >= DateTime.Now).GroupBy(x => x.datum.Month).ToList();
+            // var evenementen = db.Proj_evenementen.Where(x => x.datum >= DateTime.Now).GroupBy(x => x.datum.Month).ToList();
+            ViewBag.locatie = new SelectList(db.Proj_gemeenten, "id", "naam");
             var evenementen = db.Proj_evenementen.Where(x => x.datum >= DateTime.Now).OrderBy(x => x.datum).ToList();
             return View(evenementen);
         }
@@ -174,6 +175,52 @@ namespace ProjectDekerfsteve.Controllers
             test.Data = "dit is een test";
             return test;
         }
+        [HttpPost]
+        public ActionResult Zoek(string txtGemeente)
+        {
+            var lijst = db.Proj_evenementen.Where(x => x.gemeente.naam == txtGemeente).ToList();
+            return View(lijst);
+        }
+
+
+        #region ajax
+
+        public PartialViewResult AjaxResult(int AJaantal, int evene)
+        {
+            String res = "";
+            int rest = db.Proj_evenementen.Where(x => x.id ==  evene).First().Max_inschrijvingen - db.proj_inschrijvingen
+                           .Where(x => x.evenement_id == evene).Select(x => x.aantal_personen).Sum();
+
+            if (rest < AJaantal)
+            {
+                res = "Sorry alles volboekt";
+            }
+            return PartialView("_Subscribe", res);
+        }
+
+        
+
+        #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
