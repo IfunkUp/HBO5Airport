@@ -123,8 +123,17 @@
   <data name="Adress" xml:space="preserve">
     <value>Adres</value>
   </data>
+  <data name="antwerpen" xml:space="preserve">
+    <value>Indoorkarting Antwerpen bestaat al sinds april 1994 aan de Noorderlaan. 5000 m² enkel indoorpiste. Weer of geen weer, bij ons rijdt u altijd droog en veilig. elke dag kan u hier terecht voor een leuke avond. Ook kan u als u lid bent gratis gebruik maken van de helm controles en het transport naar en van de evenementen.</value>
+  </data>
   <data name="BackToList" xml:space="preserve">
     <value>terug naar overzicht</value>
+  </data>
+  <data name="birthdate" xml:space="preserve">
+    <value>geboortedatum</value>
+  </data>
+  <data name="change" xml:space="preserve">
+    <value>wijzig gegevens</value>
   </data>
   <data name="City" xml:space="preserve">
     <value>gemeente</value>
@@ -144,11 +153,38 @@
   <data name="Delete" xml:space="preserve">
     <value>verwijder</value>
   </data>
+  <data name="Dutch" xml:space="preserve">
+    <value>Nederlands</value>
+  </data>
+  <data name="events" xml:space="preserve">
+    <value>evenementen</value>
+  </data>
   <data name="Female" xml:space="preserve">
     <value>Vrouw</value>
   </data>
+  <data name="French" xml:space="preserve">
+    <value>Frans</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Geslacht</value>
+  </data>
+  <data name="Hello" xml:space="preserve">
+    <value>Hey</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>op onze thuisbasis in Antwerpen heten wij julie allen elke woensdag, zaterdag en zondag welkom.</value>
+  </data>
+  <data name="Intro" xml:space="preserve">
+    <value>welkom op de pagina van kartingclub "On The Edge"</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Taal</value>
+  </data>
+  <data name="Log_in" xml:space="preserve">
+    <value>inloggen</value>
+  </data>
+  <data name="Log_out" xml:space="preserve">
+    <value>uitloggen</value>
   </data>
   <data name="Male" xml:space="preserve">
     <value>Man</value>
@@ -156,17 +192,32 @@
   <data name="Name" xml:space="preserve">
     <value>voornaam</value>
   </data>
+  <data name="new_event" xml:space="preserve">
+    <value>nieuw evenement</value>
+  </data>
   <data name="Overview" xml:space="preserve">
     <value>Lijst vragen / opmerkingen</value>
   </data>
+  <data name="PersonalInfo" xml:space="preserve">
+    <value>persoonlijke info</value>
+  </data>
   <data name="Question" xml:space="preserve">
     <value>vraag</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Registreeer</value>
   </data>
   <data name="Remark" xml:space="preserve">
     <value>opmerking</value>
   </data>
   <data name="Send" xml:space="preserve">
     <value>Verstuur</value>
+  </data>
+  <data name="Slogan" xml:space="preserve">
+    <value>Karten op het randje</value>
+  </data>
+  <data name="Sure" xml:space="preserve">
+    <value>Wilt u dit zeker verwijderen?</value>
   </data>
   <data name="Surname" xml:space="preserve">
     <value>achternaam</value>
@@ -176,5 +227,8 @@
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Welkom</value>
+  </data>
+  <data name="Zipcode" xml:space="preserve">
+    <value>postcode</value>
   </data>
 </root>

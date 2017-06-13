@@ -252,6 +252,8 @@
     <Content Include="Content\agency.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\colReorder.bootstrap.min.css" />
+    <Content Include="Content\dataTables.bootstrap.min.css" />
     <Content Include="Content\images\map-image.png" />
     <Content Include="Content\images\ui-bg_diagonals-thick_75_f3d8d8_40x40.png" />
     <Content Include="Content\images\ui-bg_dots-small_65_a6a6a6_2x2.png" />
@@ -271,6 +273,8 @@
     <Content Include="Content\jquery-ui.theme.min.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\jquery.dataTables.min.css" />
+    <Content Include="Content\jquery.dataTables_themeroller.css" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -313,12 +317,16 @@
     <Content Include="Scripts\eigen\agency.js" />
     <Content Include="Scripts\eigen\agency.min.js" />
     <Content Include="Scripts\eigen\contact_me.js" />
+    <Content Include="Scripts\eigen\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\eigen\dataTables.colReorder.min.js" />
     <Content Include="Scripts\eigen\jqBootstrapValidation.js" />
+    <Content Include="Scripts\eigen\SData.js" />
     <Content Include="Scripts\eigen\Sdatepicker.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\eigen\jquery.dataTables.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />

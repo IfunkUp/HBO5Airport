@@ -8,8 +8,12 @@
 @{
     ViewBag.Title = "Overzicht";
 }
+<div>
+    <h3>@Teksten.events</h3>
+
+</div>
 <div class="col-lg-12">
-    <table class="table">
+    <table class="table" id="events">
         @{ var wissel = "";}
         @foreach (var item in Model)
         {
@@ -59,3 +63,28 @@
     }
 </div>
 
+
+
+
+
+<script type="text/javascript">
+    $(function () {
+        $("#events").dataTable({
+            "pagingType": "full_numbers"
+            , "scrolly": "600px"
+            , "columnDefs": [
+                { "width": "45px", "targets": 0 }
+                , { "width": "45px", "targets": 1 }
+                , { "width": "45px", "targets": 2 }
+                , { "width": "45px", "targets": 3 }
+           
+
+              
+            ]
+            , "order": [[1, "desc"]]
+            , "dom": 'Rlfrtip'
+            , "stateSave": "true"
+            , "lengthMenu": [[-1, 10, 20, 50, 100], ["All", 10, 20, 50, 100]]
+        });
+    });
+</script>

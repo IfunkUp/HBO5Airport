@@ -29,7 +29,7 @@
           <Key>
             <PropertyRef Name="inschrijving_id" />
           </Key>
-          <Property Name="inschrijving_id" Type="int" Nullable="false" />
+          <Property Name="inschrijving_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="persoon_id" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="evenement_id" Type="int" Nullable="false" />
           <Property Name="aantal_personen" Type="int" Nullable="false" />

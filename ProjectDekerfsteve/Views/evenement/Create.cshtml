@@ -1,17 +1,16 @@
 ﻿@model ProjectDekerfsteve.evenement
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = Teksten.new_event ;
 }
 
-<h2>Create</h2>
+<h2>@ViewBag.Title</h2>
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>evenement</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">

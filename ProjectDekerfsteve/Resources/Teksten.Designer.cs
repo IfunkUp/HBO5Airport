@@ -79,11 +79,38 @@ namespace ProjectDekerfsteve.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Indoorkarting Antwerpen bestaat al sinds april 1994 aan de Noorderlaan. 5000 m² enkel indoorpiste. Weer of geen weer, bij ons rijdt u altijd droog en veilig. elke dag kan u hier terecht voor een leuke avond. Ook kan u als u lid bent gratis gebruik maken van de helm controles en het transport naar en van de evenementen..
+        /// </summary>
+        public static string antwerpen {
+            get {
+                return ResourceManager.GetString("antwerpen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to terug naar overzicht.
         /// </summary>
         public static string BackToList {
             get {
                 return ResourceManager.GetString("BackToList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to geboortedatum.
+        /// </summary>
+        public static string birthdate {
+            get {
+                return ResourceManager.GetString("birthdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to wijzig gegevens.
+        /// </summary>
+        public static string change {
+            get {
+                return ResourceManager.GetString("change", resourceCulture);
             }
         }
         
@@ -142,6 +169,24 @@ namespace ProjectDekerfsteve.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nederlands.
+        /// </summary>
+        public static string Dutch {
+            get {
+                return ResourceManager.GetString("Dutch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to evenementen.
+        /// </summary>
+        public static string events {
+            get {
+                return ResourceManager.GetString("events", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vrouw.
         /// </summary>
         public static string Female {
@@ -151,11 +196,74 @@ namespace ProjectDekerfsteve.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Frans.
+        /// </summary>
+        public static string French {
+            get {
+                return ResourceManager.GetString("French", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Geslacht.
+        /// </summary>
+        public static string Gender {
+            get {
+                return ResourceManager.GetString("Gender", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hey.
+        /// </summary>
+        public static string Hello {
+            get {
+                return ResourceManager.GetString("Hello", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to op onze thuisbasis in Antwerpen heten wij julie allen elke woensdag, zaterdag en zondag welkom..
+        /// </summary>
+        public static string Info {
+            get {
+                return ResourceManager.GetString("Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to welkom op de pagina van kartingclub &quot;On The Edge&quot;.
+        /// </summary>
+        public static string Intro {
+            get {
+                return ResourceManager.GetString("Intro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Taal.
         /// </summary>
         public static string Language {
             get {
                 return ResourceManager.GetString("Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to inloggen.
+        /// </summary>
+        public static string Log_in {
+            get {
+                return ResourceManager.GetString("Log_in", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to uitloggen.
+        /// </summary>
+        public static string Log_out {
+            get {
+                return ResourceManager.GetString("Log_out", resourceCulture);
             }
         }
         
@@ -178,6 +286,15 @@ namespace ProjectDekerfsteve.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to nieuw evenement.
+        /// </summary>
+        public static string new_event {
+            get {
+                return ResourceManager.GetString("new_event", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lijst vragen / opmerkingen.
         /// </summary>
         public static string Overview {
@@ -187,11 +304,29 @@ namespace ProjectDekerfsteve.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to persoonlijke info.
+        /// </summary>
+        public static string PersonalInfo {
+            get {
+                return ResourceManager.GetString("PersonalInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to vraag.
         /// </summary>
         public static string Question {
             get {
                 return ResourceManager.GetString("Question", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registreeer.
+        /// </summary>
+        public static string Register {
+            get {
+                return ResourceManager.GetString("Register", resourceCulture);
             }
         }
         
@@ -210,6 +345,24 @@ namespace ProjectDekerfsteve.Resources {
         public static string Send {
             get {
                 return ResourceManager.GetString("Send", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Karten op het randje.
+        /// </summary>
+        public static string Slogan {
+            get {
+                return ResourceManager.GetString("Slogan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wilt u dit zeker verwijderen?.
+        /// </summary>
+        public static string Sure {
+            get {
+                return ResourceManager.GetString("Sure", resourceCulture);
             }
         }
         
@@ -237,6 +390,15 @@ namespace ProjectDekerfsteve.Resources {
         public static string Welcome {
             get {
                 return ResourceManager.GetString("Welcome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to postcode.
+        /// </summary>
+        public static string Zipcode {
+            get {
+                return ResourceManager.GetString("Zipcode", resourceCulture);
             }
         }
     }

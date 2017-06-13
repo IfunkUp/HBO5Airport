@@ -3,23 +3,25 @@
 @model ProjectDekerfsteve.inschrijving
 
 @{
-    ViewBag.Title = "Subscribe";
+    ViewBag.Title = "Inschrijving";
 }
 
-<h2>Subscribe</h2>
+<h2>@ViewBag.Title</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Subscribe","evenement",FormMethod.Post))
 {
+
+    evenement e = ViewBag.evenement;
+
     @Html.AntiForgeryToken()
-    
+    <h2>@e.naam</h2> 
     <div class="form-horizontal">
-        <h4>inschrijving</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.Label("gebruikersNaam", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBox("gebruikersNaam",User.Identity.Name);
+                @Html.TextBox("gebruikersNaam",User.Identity.Name)
             </div>
         </div>
         
@@ -27,17 +29,17 @@
             @Html.Label("AantalPersonen", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <p>
-                    <input name="aantal" type="text" id="sliderValue" readonly style="border:0; font-weight:bold;" />
+                    <input name="aantal" type="text" id="sliderValue" readonly style="border: 0; font-weight: bold;"/>
                     <div id="slider"></div>
-                   
+
                 </p>
             </div>
         </div>
-        
+       <div id="UpdatePanel" ></div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Subscribe" class="btn btn-default" />
             </div>
         </div>
     </div>
@@ -48,4 +50,29 @@
 </div>
 @section Scripts {
     @Scripts.Render("~/bundles/steves")
+
+    <script>
+        $(document).ready(
+        function getRest() {
+            $.ajax({
+                type: "POST",
+                url: "~/evenement/Test",
+                data: {"boodschap":"Test"},
+                datatype: "Json",
+                cache:false,
+                success: function(data) {
+                    $('#UpdatePanel').text();
+                }
+
+            });
+
+        }
+        function OnSucces(data) {
+            alert(data);
+
+        }
+        function OnError(data) {
+            alert('Fout bij opvragen data');
+    
+    </script>
 }

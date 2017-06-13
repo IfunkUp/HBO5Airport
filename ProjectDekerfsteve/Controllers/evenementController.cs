@@ -151,19 +151,29 @@ namespace ProjectDekerfsteve.Controllers
         [HttpPost]
         public ActionResult Subscribe(evenement e, int aantal)
         {
-
-            db.proj_inschrijvingen.Add(new inschrijving
+            int rest = db.Proj_evenementen.Where(x => x.id == e.id).First().Max_inschrijvingen - db.proj_inschrijvingen
+                           .Where(x => x.evenement_id == e.id).Select(x => x.aantal_personen).Sum();
+            if (rest >= aantal)
             {
-                aantal_personen = aantal,
-                evenement_id = e.id,
-                persoon_id = User.Identity.GetUserId()
-            });
-            db.SaveChangesAsync();
+                db.proj_inschrijvingen.Add(new inschrijving
+                {
+                    persoon_id = User.Identity.GetUserId(),
+                    aantal_personen = aantal,
+                    evenement_id = e.id,
+                });
+                db.SaveChanges();
+            }
+          
 
-            return View();
+            return RedirectToAction("Index", "evenement");
         }
 
-
+        public JsonResult Test(string boodschap)
+        {
+            JsonResult test = new JsonResult();
+            test.Data = "dit is een test";
+            return test;
+        }
 
 
 

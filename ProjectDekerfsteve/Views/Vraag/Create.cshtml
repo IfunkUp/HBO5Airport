@@ -1,17 +1,16 @@
 ﻿
 @model ProjectDekerfsteve.Vragen
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = Teksten.Create+" "+Teksten.Question;
 }
 
-<h2>Create</h2>
+<h2>@ViewBag.Title</h2>
 <div class="">
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal" id="contactform">
-        <h4>Vragen</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">

@@ -123,8 +123,17 @@
   <data name="Adress" xml:space="preserve">
     <value>Adresse</value>
   </data>
+  <data name="antwerpen" xml:space="preserve">
+    <value>Indoor Karting Anvers a été fondée en Avril 1994 à Noorderlaan. 5000 m² seulement de piste de ski intérieure. Beau temps mauvais temps, avec nous, vous êtes toujours sec et sûr. tous les jours, vous pouvez aller ici pour une bonne soirée. Vous pouvez également si vous êtes un membre libre utilisation des contrôles de casque et le transport vers et à partir d'événements.</value>
+  </data>
   <data name="BackToList" xml:space="preserve">
     <value>Retour à la liste</value>
+  </data>
+  <data name="birtdate" xml:space="preserve">
+    <value>date de naissance</value>
+  </data>
+  <data name="change" xml:space="preserve">
+    <value>Personnalisation des données</value>
   </data>
   <data name="City" xml:space="preserve">
     <value>commune</value>
@@ -144,11 +153,38 @@
   <data name="Delete" xml:space="preserve">
     <value>supprimer</value>
   </data>
+  <data name="Dutch" xml:space="preserve">
+    <value>Neerlandais</value>
+  </data>
+  <data name="events" xml:space="preserve">
+    <value>événements</value>
+  </data>
   <data name="Female" xml:space="preserve">
     <value>Femme</value>
   </data>
+  <data name="French" xml:space="preserve">
+    <value>Francais</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>sexe</value>
+  </data>
+  <data name="Hello" xml:space="preserve">
+    <value>he</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>à notre base à Anvers, nous accueillons voous tous chaque mercredi, samedi et dimanche.</value>
+  </data>
+  <data name="Intro" xml:space="preserve">
+    <value>Bienvenue sur la page du club de karting "On The Edge"</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Langue</value>
+  </data>
+  <data name="Log_in" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Log_out" xml:space="preserve">
+    <value>déconnecter</value>
   </data>
   <data name="Male" xml:space="preserve">
     <value>Homme</value>
@@ -156,17 +192,32 @@
   <data name="Name" xml:space="preserve">
     <value>prénom</value>
   </data>
+  <data name="New_event" xml:space="preserve">
+    <value>nouveau evenement</value>
+  </data>
   <data name="Overview" xml:space="preserve">
     <value>Liste de questions</value>
   </data>
+  <data name="PersonalInfo" xml:space="preserve">
+    <value>Information personal</value>
+  </data>
   <data name="Question" xml:space="preserve">
     <value>demande</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Registre</value>
   </data>
   <data name="Remark" xml:space="preserve">
     <value>remarque</value>
   </data>
   <data name="Send" xml:space="preserve">
     <value>envoyer</value>
+  </data>
+  <data name="Slogan" xml:space="preserve">
+    <value>Karting au bord</value>
+  </data>
+  <data name="Sure" xml:space="preserve">
+    <value>vous êtes sûr de supprimer</value>
   </data>
   <data name="Surname" xml:space="preserve">
     <value>nom de famille</value>
@@ -176,5 +227,8 @@
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Bienvenu</value>
+  </data>
+  <data name="Zipcode" xml:space="preserve">
+    <value>Code postal</value>
   </data>
 </root>
